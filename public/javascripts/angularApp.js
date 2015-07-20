@@ -1,3 +1,5 @@
+/* Angular routing and app declaration */
+
 var app = angular.module('myApp', ['ui.router']);
 
 app.config(['$stateProvider', '$urlRouterProvider', 
@@ -47,9 +49,3 @@ app.config(['$stateProvider', '$urlRouterProvider',
         $urlRouterProvider.otherwise('home');
     }
 ]);
-
-
-
-
-
-

@@ -1,3 +1,5 @@
+/* PostsController */
+
 app.controller('PostsController', ['$scope', 'posts', 'post', 'auth', 
     function ($scope, posts, post, auth) {
     $scope.post = post;

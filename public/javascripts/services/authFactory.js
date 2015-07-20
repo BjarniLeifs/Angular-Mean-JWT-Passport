@@ -1,3 +1,5 @@
+/* AuthenticationFactory */
+
 app.factory('auth', ['$http', '$window', 
     function ($http, $window) {
         var auth = {};

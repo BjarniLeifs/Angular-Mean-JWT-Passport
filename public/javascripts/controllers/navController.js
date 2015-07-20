@@ -1,3 +1,5 @@
+/* NavController */
+
 app.controller('NavController', ['$scope', 'auth', 
 	function ($scope, auth) {
     	$scope.isLoggedIn = auth.isLoggedIn;

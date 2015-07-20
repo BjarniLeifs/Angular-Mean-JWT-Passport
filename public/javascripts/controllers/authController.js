@@ -1,3 +1,5 @@
+/* AuthController*/
+
 app.controller('AuthController', ['$scope','$state', 'auth', 
     function ($scope, $state, auth) {
         $scope.user = {};

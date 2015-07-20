@@ -1,3 +1,5 @@
+/* PostsFactory */
+
 app.factory('posts', ['$http', 'auth', 
     function ($http, auth) {
         var service = {

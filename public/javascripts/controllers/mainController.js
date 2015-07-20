@@ -1,3 +1,5 @@
+/* MainController */
+
 app.controller('MainController', ['$scope', 'posts', 'auth', 
     function ($scope, posts, auth) {
         $scope.currentPost = {};
