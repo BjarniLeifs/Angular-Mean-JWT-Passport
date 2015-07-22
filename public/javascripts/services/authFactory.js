@@ -1,17 +1,17 @@
 /* AuthenticationFactory */
 
-app.factory('auth', ['$http', '$window', function($http, $window) {
+app.factory('auth', ['$http', '$window', function ($http, $window) {
     var auth = {};
 
     auth.saveToken = function (token) {
-        $window.localStorage['flapper-news-token'] = token;
+        $window.localStorage['appToken'] = token;
     };
 
-    auth.getToken = function (){
-        return $window.localStorage['flapper-news-token'];
+    auth.getToken = function () {
+        return $window.localStorage['appToken'];
     };
 
-    auth.isLoggedIn = function(){
+    auth.isLoggedIn = function () {
         var token = auth.getToken();
 
         if(token){
@@ -23,7 +23,7 @@ app.factory('auth', ['$http', '$window', function($http, $window) {
         }
     };
 
-    auth.currentUser = function(){
+    auth.currentUser = function () {
         if(auth.isLoggedIn()){
             var token = auth.getToken();
             var payload = JSON.parse($window.atob(token.split('.')[1]));
@@ -32,20 +32,20 @@ app.factory('auth', ['$http', '$window', function($http, $window) {
         }
     };
 
-    auth.register = function(user){
-        return $http.post('/register', user).success(function(data){
+    auth.register = function (user) {
+        return $http.post('/register', user).success(function (data) {
             auth.saveToken(data.token);
         });
     };
 
-    auth.logIn = function(user){
-        return $http.post('/login', user).success(function(data){
+    auth.logIn = function (user) {
+        return $http.post('/login', user).success(function (data) {
             auth.saveToken(data.token);
         });
     };
 
-    auth.logOut = function(){
-        $window.localStorage.removeItem('flapper-news-token');
+    auth.logOut = function () {
+        $window.localStorage.removeItem('appToken');
     };
 
     return auth;
