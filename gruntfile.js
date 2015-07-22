@@ -69,7 +69,7 @@
       },
       watch: {
         js: {
-          files: ['public/javascripts/*.js'],
+          files: ['public/javascripts/**/*.js'],
           tasks: ['concat:basic'],
           options: {
             livereload: true,

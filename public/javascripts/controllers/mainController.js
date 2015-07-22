@@ -1,30 +1,24 @@
 /* MainController */
 
-app.controller('MainController', ['$scope', 'posts', 'auth', 
+app.controller('MainCtrl', [
+    '$scope',
+    'posts',
+    'auth',
     function ($scope, posts, auth) {
-        $scope.currentPost = {};
-
         $scope.isLoggedIn = auth.isLoggedIn;
+        $scope.posts = posts.posts;
 
-        $scope.getPosts = function () {
-            return posts.posts;
+        $scope.addPost = function() {
+            if(!$scope.title || $scope.title === '') { return; }
+            posts.create({
+                title: $scope.title,
+                link: $scope.link,
+            });
+            $scope.title = '';
+            $scope.link = '';
         };
-
-        $scope.getPost = function (id) {
-            return posts.getPost(id);
-        };
-
-        $scope.addPost = function () {
-            if (!$scope.currentPost.title || $scope.currentPost.title === '') {
-                return;
-            }
-            $scope.currentPost.upvotes = 0;
-            posts.addPost($scope.currentPost);
-            $scope.currentPost = {};
-        };
-
-        $scope.incrementUpvote = function (post) {
-            posts.incrementUpvote(post);
+        $scope.incrementUpvotes = function(post) {
+            posts.upvote(post);
         };
     }
 ]);

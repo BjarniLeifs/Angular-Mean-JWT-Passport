@@ -5,16 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-// connect to local mongo server
 var mongoose = require('mongoose');
+var passport = require('passport');
+
 require('./models/Posts');
 require('./models/Comments');
-mongoose.connect('mongodb://localhost/myApp');
-
-// authentification
-var passport = require('passport');
 require('./models/Users');
 require('./config/passport');
+
+mongoose.connect('mongodb://localhost/news');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -32,7 +31,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-// initialize passport
 app.use(passport.initialize());
 
 app.use('/', routes);
