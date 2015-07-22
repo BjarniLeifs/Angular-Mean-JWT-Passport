@@ -2,25 +2,25 @@
 
 app.factory('posts', ['$http', 'auth', function ($http, auth) {
     // service body
-    var o = {
+    var object = {
         posts: []
     };
 
-    o.getAll = function () {
+    object.getAll = function () {
         return $http.get('/posts').success(function (data) {
-            angular.copy(data, o.posts);
+            angular.copy(data, object.posts);
         });
     };
 
-    o.create = function (post) {
+    object.create = function (post) {
         return $http.post('/posts', post, {
             headers: {Authorization: 'Bearer ' + auth.getToken()}
         }).success(function (data) {
-            o.posts.push(data);
+            object.posts.push(data);
         });
     };
 
-    o.upvote = function (post) {
+    object.upvote = function (post) {
         return $http.put('/posts/' + post._id + '/upvote', null, {
             headers: {Authorization: 'Bearer ' + auth.getToken()}
         })
@@ -29,19 +29,19 @@ app.factory('posts', ['$http', 'auth', function ($http, auth) {
         });
     };
 
-    o.get = function (id) {
+    object.get = function (id) {
         return $http.get('/posts/' + id).then(function (res) {
             return res.data;
         });
     };
 
-    o.addComment = function (id, comment) {
+    object.addComment = function (id, comment) {
         return $http.post('/posts/' + id + '/comments', comment, {
             headers: {Authorization: 'Bearer ' + auth.getToken()}
         });
     };
 
-    o.upvoteComment = function (post, comment) {
+    object.upvoteComment = function (post, comment) {
         return $http.put('/posts/' + post._id + '/comments/' + comment._id + '/upvote', null, {
             headers: {Authorization: 'Bearer ' + auth.getToken()}
         })
@@ -50,5 +50,5 @@ app.factory('posts', ['$http', 'auth', function ($http, auth) {
         });
     };
 
-    return o;
+    return object;
 }])
