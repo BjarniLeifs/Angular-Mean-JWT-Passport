@@ -7,7 +7,7 @@ app.config([ '$stateProvider', '$urlRouterProvider',
         $stateProvider
         .state('home', {
             url: '/home',
-            templateUrl: '/home.html',
+            templateUrl: 'views/home.html',
             controller: 'MainCtrl',
             resolve: {
                 postPromise: ['posts', function (posts) {
@@ -15,6 +15,20 @@ app.config([ '$stateProvider', '$urlRouterProvider',
                 }]
             }
         })
+
+        .state('home.list', {
+            url: '/list',
+            templateUrl: 'views/partial-home-list.html',
+            controller: function($scope) {
+                $scope.nomnoms = ['Food 1', 'Food 2', 'Food 3'];
+            }
+        })
+
+        .state('fokk', {
+            url: '/fokk',
+            templateUrl: 'views/partial-fokk.html'
+        })
+
         .state('posts', {
             url: '/posts/{id}',
             templateUrl: '/posts.html',
@@ -27,6 +41,17 @@ app.config([ '$stateProvider', '$urlRouterProvider',
         })
         .state('login', {
             url: '/login',
+            templateUrl: 'views/partial-login.html',
+            controller: 'AuthCtrl',
+            onEnter: ['$state', 'auth', function ($state, auth){
+                if(auth.isLoggedIn()){
+                    $state.go('home');
+                }
+            }]
+        })
+        /*
+        .state('login', {
+            url: '/login',
             templateUrl: '/login.html',
             controller: 'AuthCtrl',
             onEnter: ['$state', 'auth', function ($state, auth){
@@ -35,9 +60,10 @@ app.config([ '$stateProvider', '$urlRouterProvider',
                 }
             }]
         })
+*/
         .state('register', {
             url: '/register',
-            templateUrl: '/register.html',
+            templateUrl: 'views/partial-register.html',
             controller: 'AuthCtrl',
             onEnter: ['$state', 'auth', function ($state, auth){
                 if(auth.isLoggedIn()){
