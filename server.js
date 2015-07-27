@@ -8,15 +8,15 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
 
-require('./models/Posts');
-require('./models/Comments');
-require('./models/Users');
-require('./config/passport');
+require('./server/models/Posts');
+require('./server/models/Comments');
+require('./server/models/Users');
+require('./server/config/passport');
 
 mongoose.connect('mongodb://localhost/news');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var routes = require('./server/routes/index');
+var users = require('./server/routes/users');
 
 var app = express();
 

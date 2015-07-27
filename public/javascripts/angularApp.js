@@ -31,7 +31,7 @@ app.config([ '$stateProvider', '$urlRouterProvider',
 
         .state('posts', {
             url: '/posts/{id}',
-            templateUrl: '/posts.html',
+            templateUrl: 'views/partial-posts.html',
             controller: 'PostsCtrl',
             resolve: {
                 post: ['$stateParams', 'posts', function ($stateParams, posts) {
