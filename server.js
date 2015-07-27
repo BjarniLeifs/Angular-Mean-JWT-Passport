@@ -21,8 +21,14 @@ var users = require('./server/routes/users');
 var app = express();
 
 // view engine setup
+//app.set('views', path.join(__dirname, 'public/views'));
+//app.set('view engine', 'ejs');
+
+// Make engine html use ejs render.
+app.engine('html', require('ejs').renderFile);
+// set path to views
 app.set('views', path.join(__dirname, 'public/views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));

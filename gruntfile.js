@@ -56,7 +56,7 @@
         }
       },
       jshint: {
-        files: ['server.js', 'Gruntfile.js', 'public/javascripts/*.js', 'app.js', 'server/**/*.js', 'models/*.js', 'routes/*.js', 'config/*.js'],
+        files: ['server.js', 'Gruntfile.js', 'public/javascripts/*.js', 'server/**/*.js', 'server/models/*.js', 'server/routes/*.js', 'server/config/*.js'],
         options: {
           // options here to override JSHint defaults
           globals: {
