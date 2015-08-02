@@ -10,15 +10,15 @@
 ##### Usefull to know.
 
 	If you do not have everything installed it should be installed with npm see Dependances, 
-	if for some reason the prject wont start normaly, there might be two resons for it.
+	if for some reason the project wont start normaly, there might be two resons for it.
 
 	1. You do not have all tools installed, contact members for information or try install 
 	   them your'e self.
 
 	2. For some reson someone rage pushed on git leading to bad code. (bad code)
 	
-	3. If installing needed tools do not help you out, please get in touch with members 
-	   before trying to change code. 
+	If installing needed tools do not help you out, please get in touch with members 
+	before trying to change the code. 
 
 
 ##### Nodemon
@@ -28,15 +28,15 @@
 	are made to the server leading you not to worry about restarting it all the time like using 
 	node app.js. 
 
-	If not installed you will need to do so with : 
+	If not installed you will need to do so : 
 	
 		npm install -g nodemon
 	
 		(-g stands for global, there for it is installed to your'e computer)
 
-	If installed do not worry about it. package.json has it as devdependance it shoudl be installed 
-	but none the less if accounter error. you will need to install it since the grunt will use it 
-	to start server.
+	If installed, do not worry about it. package.json has it as devdependance it should be installed 
+	but none the less if accounter error. You will need to install it since the grunt will use it 
+	to start the server.
 	
 	The server is started on port 3000
 
@@ -45,30 +45,34 @@
 	There are a lot of dependance's in package.json file, and some extra devdependance's please 
 	install it before you try running the project.
 
-	npm install -d
+	Do so with :
+		npm install -d
 
 ##### Database	
 	
-	We use mongodb / mongoose in this project it is in package.json if any troubel getting the 
+	We use mongodb / mongoose in this project it is in package.json if any trouble getting the 
 	project up and running you might need to install mongodb found at https://www.mongodb.org
+	Information on how to install can be found at http://docs.mongodb.org/manual/
+		
+		If installed.
+		
+		mongod --dbpath "path to your database"   fx deault path on mongodb is : /data/db 
 	
-	mongod --dbpath "path to your database often /data/db
-	
-	We use grunt for the project, everything is automatic, the css, less and other files will 
-	be compiled to right places.
 
 ##### Grunt
 	
-	To start the server you only need to type grunt in the prject folder
+	To start the server you only need to type grunt in the project folder
 
-	grunt
+		grunt
 	
-	Grunt is configured to handle everything that change's in the project.
+	Grunt is configured to handle everything that change's in the project and will do so 
+	automaticly for you at all times. Do not change public/main folder at anytime!
 	See gruntfile.js for more information about what is in it.	
 	
 ##### Coding rules (Work in progress)
 
 	Please follow the coding rules, read over the project and see how it is setup and follow it.
+	It will make code consistancy in the project and consistant style. 
 
 	1. Do not push on master branch unless you have made sure the code is stable and working 
 	   properly, prefer solution is to send pull request.
@@ -155,28 +159,47 @@
 		});
 
 		app.controller('AuthCtrl', ['$scope', '$state', 'auth',
-    		function ($scope, $state, auth) {
-        		....
-    		}
-    	]);
-
-    6. (Work in progress).
+    			function ($scope, $state, auth) {
+        			....
+    			}
+    		]);
+    
+    6. Comments
+    		
+    		Please comment code briefly at all times. It doesn't matter how great your'e code
+    		looks, ut doesn't matter how great and good programmer you are. At some point 
+    		someone will be looking at the code, changing it, adding to it. When working on 
+    		projects it's best to comment some thought down, this will help you and others
+    		to get better understanding of the code, setup and geting into the code in better
+    		time. Be fare with yourself and others.
+    		
+    		Please read this short article about the subject comments, it will change the way
+    		you will code to the better with simple changes without have to change large 
+    		factor in your coding skills.
+    		
+    		http://blog.codefx.org/techniques/documentation/comment-your-fucking-code/
+    		
+    		Comment your'e code, be a teamplayer! 
+    		
+    7. (Work in progress).
 
 
 ##### Troubleshoot (Work in progress)
 
 ###### If error with mongod or mongoose when starting server.
 	
-	1.st check if the mongodb is running with mongod or mongod --dbpath "path/to/database"
-	2.nd add if found.
+	1. Check if the mongodb is running with mongod or mongod --dbpath "path/to/database"
+	2. Add more info if found and needed.
 
 ###### If port of the server doesn't shut down.
 	
-	1.st get to know something about fg (foreground) and bg (background).
-	2.nd if skip 1st then try do jobs in terminal to see all current jobs, if you
+	1. Get to know something about fg (foreground) and bg (background).
+	
+	2. If skip 1st then try do jobs in terminal to see all current jobs, if you
 	see job [1] you might have hit ctrl-z. That puts the job in pause/stop in bg and still
 	running on the port. then you can do fg 1 and put it in play again. Remember to use ctrl-c 
 	to terminate process. 
-	3.rd add if found.
+	
+	3. Add more info if found and needed.
 
 ###### Please continue this Troubleshoot as we go.... thank you 
