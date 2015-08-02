@@ -1,4 +1,8 @@
-Secret key's are in users.js in models, 
-and users routes... it need to be the same...
+### Put usefull things in here!!!
 
-need to find better way to store the key in one file and send it to every one if changed...
+#### Usefull note's for all...
+
+  Please put some note's here, that everyone need to know. When approved and fixed. 
+  If implamented in the project please remove the information from here. 
+  Remeber if it has to be some information we need to know, put it in README.md or make 
+  new fileName.md and push it on git thank you..
