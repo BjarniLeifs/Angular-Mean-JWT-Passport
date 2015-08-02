@@ -25,6 +25,7 @@ var mongoose = require('mongoose');
 // Passport is authentication middleware... for register, login and so forth..
 var passport = require('passport');
 
+
 // Linking to schemas, they are under models and is like "table in sql"... 
 // How things are put in database -- used as followed require('./pathtomodels');
 require('./server/models/Users');

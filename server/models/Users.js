@@ -8,6 +8,9 @@ var crypto = require('crypto');
 // This is done for security feature.. other method that can be used = sessions.
 var jwt = require('jsonwebtoken');
 
+// Getting secrets config file.
+var secure = require('../config/secrets');
+
 // Making the Schema for User and adding to database.. this is like table in sql.. 
 // Welcome to "schemless" database coding.. we are using jsons here.
 var UserSchema = new mongoose.Schema({
@@ -45,7 +48,7 @@ UserSchema.methods.generateJWT = function() {
             username: this.username,
             exp: parseInt(exp.getTime() / 1000)
         },
-        'SECRET');
+        secure.secret);
 };
 
 // Simular to table, this identity name of the "table". This is how we know where to 

@@ -5,19 +5,24 @@ var express = require('express');
 // Making router
 var router = express.Router();
 
+
 // Declare model for use. mongodb (database) 
 var mongoose = require('mongoose');
 
 // Declare jwt (json web tokens) model for auth for tokens
 var jwt = require('express-jwt');
 
+// Getting secrets config file.
+var secure = require('../config/secrets');
+
 // Declare auth for authorataion of use. to call for some function
-var auth = jwt({secret: 'SECRET', userProperty: 'payload'});
+var auth = jwt({secret: secure.secret, userProperty: secure.payload});
 
 // Declare Post and Comment Schem, it is needed so it is posible to make new, 
 // Posts, comments and search in database...
 var Post = mongoose.model('Post');
 var Comment = mongoose.model('Comment');
+
 
 // Information about what is posible to use.
 // get , post, pull, del, etc...
