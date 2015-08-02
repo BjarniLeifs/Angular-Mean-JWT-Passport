@@ -15,7 +15,7 @@
 <body ng-app="myApp">
     <nav class="navbar navbar-inverse" ng-controller="NavCtrl">
         <ul class="nav navbar-nav">
-            <li><a ui-sref="home">Heilindi</a></li>
+            <li><a ui-sref=".home">Heilindi</a></li>
             <li ng-show="isLoggedIn()"><a>{{currentUser()}}</a></li>
             <li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
             <li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
