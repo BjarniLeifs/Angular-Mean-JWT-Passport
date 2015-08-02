@@ -185,6 +185,8 @@
     
 ##### Issues
 
+###### Making Issues
+
 	There is a feature here on git on the right menu panel on the web when we are in the 
 	project folder name ISSUE and Pull requests. Issues are much like trello found at
 	( http://www.trello.com ), how to use Issues.
@@ -217,6 +219,19 @@
 		
 		Then submit new issue
 
+###### Commenting or closing issue.
+
+	We will use two systems on the issue.
+	
+	1. If you have something to say about the issue, note, question, working on it or something else.
+	2. When you have finished and adressed the issue you will close it.
+	
+	If your putting note, question and so forth on the issue we will comment on it, this will lead to better
+	workflow for everyone and keeping things up to date.
+
+	If you have worked on it and solved the issue in hand, comment on it with breif explanation on it and close
+	the issue. 
+	
 
 ##### Troubleshoot (Work in progress)
 
