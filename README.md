@@ -182,6 +182,40 @@
     		Comment your'e code, be a teamplayer! 
     		
     7. (Work in progress).
+    
+##### Issues
+
+	There is a feature here on git on the right menu panel on the web when we are in the 
+	project folder name ISSUE and Pull requests. Issues are much like trello found at
+	( http://www.trello.com ), how to use Issues.
+	
+		Some text about the issue submited 
+
+		/* Issue ain't just some problems, they can be tasks, questions or anything for that matter... */
+		Look at right menu panel and you fill find Labels, Milestone and Assignee.
+		
+		Information of use of labels.
+		
+			Bug is for bugs to fix.
+			Duplicates are for duplicates that are needed to remove.
+			Enhancement are for improvement in code are feature that needs to be implemented.
+			Help wanted is when you need help with something.
+			Invalid is when something is invalid.
+			Question is used for question.
+			Wontfix is used for everything else, special things...
+		
+		Information about milestones.
+		
+			We can make milestones on the project before launch and so forth, to help os to keep on track.
+		
+		Information about Assignee.
+		
+		We use this to identify who made the issue so there will be more impact way to find more information
+		about the topic if needed.
+		
+		Please follow this for better oversight for everyone involved
+		
+		Then submit new issue
 
 
 ##### Troubleshoot (Work in progress)
