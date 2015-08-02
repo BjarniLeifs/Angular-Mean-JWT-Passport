@@ -4,22 +4,29 @@
 
 	Start by cloning the project and read this readme.me
 	
-	You will be needing nodemon for the server, it helps to restart and maintain all things in this application with grunts assistance.
+	You will be needing nodemon for the server, it helps to restart and maintain all things 
+	in this application with grunts assistance.
 
 ##### Usefull to know.
 
-	If you do not have everything installed it should be installed with npm see Dependances, if for some reason the prject wont start normaly, there might be two resons for it.
+	If you do not have everything installed it should be installed with npm see Dependances, 
+	if for some reason the prject wont start normaly, there might be two resons for it.
 
-	1. You do not have all tools installed, contact members for information or try install them your'e self.
+	1. You do not have all tools installed, contact members for information or try install 
+	   them your'e self.
 
 	2. For some reson someone rage pushed on git leading to bad code. (bad code)
 	
-	3. If installing needed tools do not help you out, please get in touch with members before trying to change code. 
+	3. If installing needed tools do not help you out, please get in touch with members 
+	   before trying to change code. 
 
 
 ##### Nodemon
 
-	Nodemon is just like node, to start node you do fx. node app.js. However if nodemon is used you will type nodemon app.js. This is a handy tool to use. It restarts server if any changes are made to the server leading you not to worry about restarting it all the time like using node app.js. 
+	Nodemon is just like node, to start node you do fx. node app.js. However if nodemon is used 
+	you will type nodemon app.js. This is a handy tool to use. It restarts server if any changes 
+	are made to the server leading you not to worry about restarting it all the time like using 
+	node app.js. 
 
 	If not installed you will need to do so with : 
 	
@@ -27,21 +34,28 @@
 	
 		(-g stands for global, there for it is installed to your'e computer)
 
-	If installed do not worry about it. package.json has it as devdependance it shoudl be installed but none the less if accounter error. you will need to install it since the grunt will use it to start server.
+	If installed do not worry about it. package.json has it as devdependance it shoudl be installed 
+	but none the less if accounter error. you will need to install it since the grunt will use it 
+	to start server.
+	
+	The server is started on port 3000
 
 ##### Dependances
 
-	There are a lot of dependance's in package.json file, and some extra devdependance's please install it before you try running the project.
+	There are a lot of dependance's in package.json file, and some extra devdependance's please 
+	install it before you try running the project.
 
 	npm install -d
 
 ##### Database	
 	
-	We use mongodb / mongoose in this project it is in package.json if any troubel getting the project up and running you might need to install mongodb found at 
-	3rd
+	We use mongodb / mongoose in this project it is in package.json if any troubel getting the 
+	project up and running you might need to install mongodb found at https://www.mongodb.org
+	
 	mongod --dbpath "path to your database often /data/db
 	
-	We use grunt for the project, everything is automatic, the css, less and other files will be compiled to right places.
+	We use grunt for the project, everything is automatic, the css, less and other files will 
+	be compiled to right places.
 
 ##### Grunt
 	
@@ -54,9 +68,10 @@
 	
 ##### Coding rules (Work in progress)
 
-	Please follow the coding rules, read over the project and see how it is setup and follow it like it.
+	Please follow the coding rules, read over the project and see how it is setup and follow it.
 
-	1. Do not push on master branch unless you have made sure the code is stable and working properly, prefer solution is to send pull request.
+	1. Do not push on master branch unless you have made sure the code is stable and working 
+	   properly, prefer solution is to send pull request.
 	
 	2. We prefer to have brances, not needed if carfull on how we push on git.
 
@@ -160,7 +175,8 @@
 	1.st get to know something about fg (foreground) and bg (background).
 	2.nd if skip 1st then try do jobs in terminal to see all current jobs, if you
 	see job [1] you might have hit ctrl-z. That puts the job in pause/stop in bg and still
-	running on the port. then you can do fg 1 and put it in play again. Remember to use ctrl-c to terminate process. 
+	running on the port. then you can do fg 1 and put it in play again. Remember to use ctrl-c 
+	to terminate process. 
 	3.rd add if found.
 
 ###### Please continue this Troubleshoot as we go.... thank you 
