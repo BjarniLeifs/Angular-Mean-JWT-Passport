@@ -29,9 +29,12 @@ router.post('/register', function (req, res, next) {
         return res.status(400).json({message: 'Please fill out all fields'});
     }
 
-    var user = new User();
-    user.username = req.body.username;
+    var user        = new User();
+    user.username   = req.body.username;
     user.setPassword(req.body.password);
+    // Define scopes. Meaning access rights to api calls
+    user.scopes.push('user');
+    user.scopes.push('admin');
     user.save(function (err) {
         if (err) {
             return next(err);
@@ -62,6 +65,7 @@ router.post('/login', function (req, res, next) {
         }
     })(req, res, next);
 });
+
 
 // Returning calls to whom ever called. 
 module.exports = router;

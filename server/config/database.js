@@ -3,5 +3,5 @@ module.exports = {
 	// Configuration of databse goes here.
 
 	// Setting url for database 
-	'url' : 'mongodb://localhost:27017/news' 
+	'url' : 'mongodb://localhost:27017/myApp' 
 };

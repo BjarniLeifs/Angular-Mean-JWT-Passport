@@ -44,6 +44,7 @@ app.factory('auth', ['$http', '$window', function ($http, $window) {
         });
     };
 
+
     auth.logOut = function () {
         $window.localStorage.removeItem('appToken');
     };

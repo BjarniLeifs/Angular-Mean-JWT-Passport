@@ -19,4 +19,6 @@ app.controller('AuthCtrl', ['$scope', '$state', 'auth',
                 $state.go('home');
             });
         };
+
+
     }]);

@@ -3,10 +3,12 @@
   "description": "Start package for angular projects, mean stack + jwt + passport authentication",
   "version": "0.0.0",
   "author": "Bjarni Kristjan Leifsson <bjarnil10 at ru dot is>",
-  "contributors": [{
-    "name": "undefined",
-    "email": "undefined"
-  }],
+  "contributors": [
+    {
+      "name": "undefined",
+      "email": "undefined"
+    }
+  ],
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -37,10 +39,13 @@
     "express": "~4.12.2",
     "express-jwt": "^3.0.1",
     "jsonwebtoken": "^5.0.2",
+    "lodash": "^3.10.1",
     "mongodb": "^2.0.36",
     "mongoose": "^4.0.1",
     "morgan": "~1.5.1",
     "passport": "^0.2.2",
+    "passport-facebook": "^2.0.0",
+    "passport-facebook-token": "^2.3.0",
     "passport-local": "^1.0.0",
     "serve-favicon": "~2.2.0"
   },

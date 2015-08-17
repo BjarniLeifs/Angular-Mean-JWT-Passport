@@ -14,14 +14,24 @@ var secure = require('../config/secrets');
 // Making the Schema for User and adding to database.. this is like table in sql.. 
 // Welcome to "schemless" database coding.. we are using jsons here.
 var UserSchema = new mongoose.Schema({
+    
     username: {
         type: String, 
         lowercase: true, 
         unique: true
     },
+    scopes: [],
     hash: String,
-    salt: String
+    salt: String,
+    facebook : {
+        id: String,
+        token: String,
+        email: String,
+        name : String
+    }
+
 });
+
 
 // Method function to set password. Crypto used for security 
 UserSchema.methods.setPassword = function (password) {
@@ -44,8 +54,12 @@ UserSchema.methods.generateJWT = function() {
     exp.setDate(today.getDate() + 60);
 
     return jwt.sign({
+            // Payload here we can set what ever we want and send it
+            // With the token and use for what ever we want. Please
+            // Do not send passwords and sensitive information
             _id: this._id,
             username: this.username,
+            scopes: this.scopes,
             exp: parseInt(exp.getTime() / 1000)
         },
         secure.secret);

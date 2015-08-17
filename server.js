@@ -13,7 +13,7 @@ var favicon = require('serve-favicon');
 // Logger for dev purpose
 var logger = require('morgan');
 
-// cookieParser is to change, reseve cooke... used to read it
+// cookieParser is to change, reserve cookie... used to read it
 var cookieParser = require('cookie-parser');
 
 // bodyParser is used to read the body msg.. req.body.something('bla...');
@@ -25,6 +25,17 @@ var mongoose = require('mongoose');
 // Passport is authentication middleware... for register, login and so forth..
 var passport = require('passport');
 
+// Load the modern build 
+var _ = require('lodash');
+
+// Load Json Web Token
+var jwt = require('jsonwebtoken');
+
+// Load express json web token, for authenticating checks of scopes.
+var jwtCheck = require('express-jwt');
+
+// Loading secret config
+var secure = require('./server/config/secrets');
 
 // Linking to schemas, they are under models and is like "table in sql"... 
 // How things are put in database -- used as followed require('./pathtomodels');
@@ -79,6 +90,32 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Intialize passport and telling app to use passport for authantications.. 
 app.use(passport.initialize());
 
+// API calls. Require API key used to validate
+// This is token security to ensure permission in the app. When 
+// ever something /api/... is called. 
+app.use('/api', jwtCheck({
+  secret: secure.secret,
+  userProperty: secure.payload
+}));
+
+
+// TESTERS FOR AUTH 
+
+var open4 = require('./server/helpers/scopes');
+
+
+
+app.post('/api/follow', open4.Scopes(['test33']), 
+  function (req, res) {
+    return res.status(201).send({followed: true});
+  }
+);
+
+
+// END TESTERS
+
+
+/*  Telling the app where to look for Helpers files that are used  */
 
 /*  Telling the app where to look for API files that are used  */
 
@@ -94,6 +131,8 @@ app.use(passport.initialize());
 app.use(require('./server/routes/posts'));
 app.use(require('./server/routes/users'));
 app.use(require('./server/routes/index'));
+app.use(require('./server/routes/admin'))
+app.use(require('./server/routes/socialAuth'));
 
 
 // Developer stuff in error handling and gives stacktraces in console or renders error.html

@@ -5,7 +5,6 @@ var express = require('express');
 // Making router
 var router = express.Router();
 
-
 // Declare model for use. mongodb (database) 
 var mongoose = require('mongoose');
 
@@ -99,7 +98,7 @@ router.post('/posts/:post/comments', auth, function (req, res, next) {
 
 // Vote on comment, auth used. Need to be logged in.
 router.put('/posts/:post/comments/:comment/upvote', auth, function(req, res, next) {
-    req.comment.upvoteToto(function(err, comment) {
+    req.comment.upvoteToto(function (err, comment) {
         if (err) {
             return next(err);
         }
